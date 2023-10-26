@@ -1,0 +1,347 @@
+body {
+    background-color: #0E0321;
+}
+
+/*button*/
+.btn-block {
+    position: relative;
+}
+
+.btn-hw {
+    width: 152px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: normal;
+    background: #F7187C;
+    border-radius: 50px;
+    padding: 20px 25px;
+    border: none;
+    transition: 5s ease;
+    box-shadow: 0 15px 60px -5px rgba(0, 0, 0, .5);
+}
+
+.btn-hw:hover {
+    cursor: pointer;
+}
+
+.btn-hw:hover + .drip-1 {
+    height: 50px;
+}
+
+.btn-hw:hover ~ .drip-2 {
+    height: 90px;
+}
+
+.btn-hw:hover ~ .drip-3 {
+    height: 40px;
+}
+
+.drip-1 {
+    position: absolute;
+    width: 19px;
+    height: 0;
+    border-radius: 0 0 21px 21px;
+    background: #F7187C;
+    margin: -21px 105px;
+    transition: height 0.9s ease;
+}
+
+.drip-2 {
+    position: absolute;
+    width: 19px;
+    height: 0;
+    border-radius: 0 0 21px 21px;
+    background: #F7187C;
+    margin: -21px 85px;
+    transition: height 1.5s ease;
+}
+
+.drip-3 {
+    position: absolute;
+    width: 19px;
+    height: 0;
+    border-radius: 0 0 21px 21px;
+    background: #F7187C;
+    margin: -21px 30px;
+    transition: height .7s ease;
+}
+
+
+/*header*/
+.header {
+    background-color: transparent;
+}
+
+.inner_header a {
+    color: #f0f0f0;
+}
+
+/*bg*/
+
+.main-hw{
+    background-image: url("../img/img-hw/background.png") ;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 500px;
+}
+.main-hw img{
+    position: absolute;
+    bottom: 0;
+}
+.main-hw h2{
+    color: white;
+    position: absolute;
+    font-size: 90px;
+    z-index: 2;
+    margin-top: 10px;
+    transform: translate3d(0, calc(var(--scrollTop) * .4), 0);
+}
+.layer-1{
+    position: absolute;
+    margin-bottom: 106px;
+    margin-left: 60px;
+    width: 100%;
+    transform: translate3d(0, calc(var(--scrollTop) * .6), 0);
+    pointer-events: none;
+}
+.layer-2{
+    width: 100%;
+    z-index: 3;
+    transform: translate3d(0, calc(var(--scrollTop) * .1), 0);
+    pointer-events: none;
+}
+#leftCloud,
+#mainCloud,
+#rightCloud {
+    top: 120px;
+    width: 200px;
+}
+#leftCloud {
+    left: 110px;
+}
+#rightCloud {
+    right: 110px;
+}
+/* GMAIL BLOCK */
+
+.gmail_block {
+    padding: 100px 0;
+}
+
+.inner_gmail_block {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid #F7187C;
+    height: 300px;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.input-hw {
+    width: 350px;
+    height: 50px;
+    font-size: 20px;
+    padding-left: 5px;
+    color: #f0f0f0;
+    background: transparent;
+    border: 2px solid #F7187C;
+}
+
+.form_gmail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form_gmail button {
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* MOVE BLOCK */
+
+.move_block {
+    padding: 100px 0;
+}
+
+.parent_block {
+    height: 500px;
+    width: 500px;
+    border: 1px solid #F7187C;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 50px;
+}
+
+.inner_parent_block {
+    height: 400px;
+    width: 400px;
+    border: 1px solid var(--orange);
+    border-radius: 18px;
+}
+
+.child_block {
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background-image: url("../img/pngegg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    transition: all 0.1s ease;
+    animation: rotate 0.1s linear infinite;
+}
+
+/*@keyframes rotate {*/
+/*    from {*/
+/*        transform: rotate(-360deg);*/
+/*    }*/
+/*}*/
+
+.inner_move_block {
+    margin-top: 50px;
+}
+
+/*----ANALOG CLOCK-----*/
+
+.clock {
+    --clock-size: 360px;
+    width: var(--clock-size);
+    height: var(--clock-size);
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    border-radius: 50%;
+    color: white;
+}
+
+.spike {
+    position: absolute;
+    width: 8px;
+    height: 1px;
+    background: #fff9;
+    line-height: 20px;
+    transform-origin: 50%;
+    z-index: 5;
+    inset: 0;
+    margin: auto;
+    font-style: normal;
+    transform: rotate(var(--rotate)) translateX(var(--dail-size));
+}
+
+.spike:nth-child(5n+1) {
+    box-shadow: -7px 0 #fff9;
+}
+
+.spike:nth-child(5n+1):after {
+    content: attr(data-i);
+    position: absolute;
+    right: 22px;
+    top: -10px;
+    transition: 1s linear;
+    transform: rotate(calc(var(--dRotate) - var(--rotate)));
+}
+
+.seconds {
+    --dRotate: 0deg;
+    --dail-size: calc((var(--clock-size) / 2) - 8px);
+    font-weight: 800;
+    font-size: 18px;
+    transform: rotate(calc(-1 * var(--dRotate)));
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    transition: 1s linear;
+}
+
+.minutes {
+    --dail-size: calc((var(--clock-size) / 2) - 65px);
+    font-size: 16px;
+    transform: rotate(calc(-1 * var(--dRotate)));
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    transition: 1s linear;
+}
+
+.stop-anim {
+    transition: 0s linear;
+}
+
+.stop-anim .spike:after {
+    transition: 0s linear !important;
+}
+
+.hour {
+    font-size: 70px;
+    font-weight: 900;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.minute {
+    font-size: 36px;
+    font-weight: 900;
+    position: absolute;
+    background: #000;
+    z-index: 10;
+    right: calc(var(--clock-size) / 4.5);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.minute:after {
+    content: "";
+    position: absolute;
+    border: 2px solid #fff;
+    border-right: none;
+    height: 50px;
+    left: -10px;
+    top: 50%;
+    border-radius: 40px 0 0 40px;
+    width: calc(var(--clock-size) / 2.75);
+    transform: translatey(-50%);
+}
+
+
+/*-------STOP WATCH------ */
+
+.time {
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 80px;
+    height: 100px;
+    width: 100%;
+    border-bottom: 1px solid #F7187C;
+    margin-top: 40px;
+}
+
+.time_block {
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+}
+
+.stopwatch {
+    padding: 100px 0;
+    margin-bottom: 200px ;
+}
+
+.time_buttons {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

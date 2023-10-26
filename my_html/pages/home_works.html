@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>ч
+    <meta charset="UTF-8">
+    <title>Home Works</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/core.css">
+    <link rel="stylesheet" href="../css/home_works.css">
+
+
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="content">
+        <div class="header">
+            <div class="container">
+                <div class="inner_header">
+                    <a href="../index.html">
+                        <div class="logotype" style="background-color: transparent; z-index: 4">
+                            <h2>Java<span>Script</span></h2>
+                        </div>
+                    </a>
+                    <ul class="menu">
+                        <li class="menu_link">
+                            <a href="../pages/home_works.html">Home Works</a>
+                        </li>
+                        <li class="menu_link">
+                            <a href="../pages/lessons.html">Lessons</a>
+                        </li>
+                        <li class="menu_link">
+                            <a href="https://t.me/NurDinBuy16" target="_blank">Send hw</a>
+                        </li>
+                    </ul>
+                        <button class="btn-hw" id="btn-get">Click me!</button>
+                        <div class="drip-1"></div>
+                        <div class="drip-2"></div>
+                        <div class="drip-3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="main-hw">
+            <h2 class="title-hw">Home Work</h2>
+            <img src="../img/img-hw/leftCloud.png" id="leftCloud" class="leftCloud">
+            <img src="../img/img-hw/rightCloud.png" id="rightCloud">
+            <img src="../img/img-hw/mainCloud.png" id="mainCloud">
+            <img class="img layer-1" src="../img/img-hw/layer-1.png">
+            <img class="img layer-2" src="../img/img-hw/layer-2.png">
+        </div>
+        <div class="gmail_block">
+            <div class="container">
+                <h3>Home work 1 (part 1)</h3>
+                <div class="inner_gmail_block">
+                    <div class="form_gmail">
+                        <label for="gmail_input"></label>
+                        <input class="input-hw" type="text" id="gmail_input" placeholder="your gmail">
+
+                        <div class="btn-block">
+                            <button class="btn-hw" id="gmail_button">Check gmail</button>
+                            <div class="drip-1"></div>
+                            <div class="drip-2"></div>
+                            <div class="drip-3"></div>
+                        </div>
+                        <span class="checker" id="gmail_result"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="move_block">
+            <div class="container">
+                <h3>Home work 1 (part 2)</h3>
+                <div class="inner_move_block">
+                    <div class="parent_block">
+                        <div class="child_block"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stopwatch">
+            <div class="container">
+                <h3>Home work 2 </h3>
+                <div class="time">
+                    <div class="time_block">
+                        <div class="interval" id="minutesS">0</div>
+                        <div class="break">:</div>
+                        <div class="interval" id="secondsS">0</div>
+                        <div class="break">:</div>
+                        <div class="interval" id="ml-secondsS">0</div>
+                    </div>
+                </div>
+                <div class="time_buttons">
+                    <div class="btn-block">
+                        <button class="btn-hw" id="start">Start</button>
+                        <div class="drip-1"></div>
+                        <div class="drip-2"></div>
+                        <div class="drip-3"></div>
+                    </div>
+                    <div class="btn-block">
+                        <button class="btn-hw" id="stop">Stop</button>
+                        <div class="drip-1"></div>
+                        <div class="drip-2"></div>
+                        <div class="drip-3"></div>
+                    </div>
+                    <div class="btn-block">
+                        <button class="btn-hw" id="reset">Reset</button>
+                        <div class="drip-1"></div>
+                        <div class="drip-2"></div>
+                        <div class="drip-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-hw">
+            <div class="container">
+                <a href="https://www.instagram.com/nurdinbuy/" target="_blank">
+                    <div class="inner_footer">
+                        <h2>Made by NurDinBuy</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal">
+    <div class="modal_dialog">
+        <div class="modal_content">
+            <form action="#">
+                <div class="modal_close">&times;</div>
+                <div class="modal_title">Мы свяжемся с вами как можно быстрее!</div>
+                <input required placeholder="Ваше имя" name="name" type="text" class="modal_input">
+                <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal_input">
+                <button class="btn btn_dark btn_min">Перезвонить мне</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="../libs/gsap/ScrollSmoother.min.js" ></script>
+<script src="../libs/gsap/ScrollTrigger.min.js" ></script>
+<script src="../libs/gsap/gsap.min.js" ></script>
+<script src="../js/main.js"></script>
+<script src="../js/home_works.js"></script>
+<script src="../js/modal.js"></script>
+</html>
