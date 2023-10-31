@@ -58,7 +58,6 @@ const bindPostData = (from) => {
         const usersObj = {}
         fromData.forEach((item, index,) => {
             usersObj[index] = item
-
         })
         const userJson = JSON.stringify(usersObj)
         if (window.location.pathname === '/project_program_for_students/index.html'){
@@ -69,7 +68,6 @@ const bindPostData = (from) => {
     }
 }
 bindPostData(formElement)
-
 
 // const postData = (form) => {
 //     form.addEventListener('submit', (event) => {

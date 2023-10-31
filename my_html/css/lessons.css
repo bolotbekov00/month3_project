@@ -1,17 +1,73 @@
-/*main-block*/
-.main-block-ls{
-    margin: 0 auto  ;
-    background-color: black;
-    height: 100vh;
-    width: 100%;
-
+.btn-ls{
+    padding: 15px 25px ;
+    border: #181200 solid 2px;
+    background: transparent;
+    color: #f0f0f0;
+    border-radius: 5px ;
+    font-size: 17px;
 }
 
 
+/*main-block*/
+.main-block-ls{
+    overflow: hidden;
+}
+
+.bg-1{
+    transform: translate3d(0, calc(var(--scrollTop) / 4.7), 0);
+    z-index: 0;
+}
+.bg-2{
+    transform: translate3d(0, calc(var(--scrollTop) * .95), 0);
+    z-index: 0;
+}
+.bg-3{
+    transform: translate3d(0, calc(var(--scrollTop) * .90), 0);
+    z-index: 2;
+}
+.bg-4{
+    transform: translate3d(0, calc(var(--scrollTop) * .85), 0);
+    z-index: 2;
+}
+.bg-5{
+    transform: translate3d(0, calc(var(--scrollTop) * .80), 0);
+    z-index: 2;
+}
+.bg-6{
+    transform: translate3d(0, calc(var(--scrollTop) * .75), 0);
+    z-index: 2;
+}
+.bg-7{
+    transform: translate3d(0, calc(var(--scrollTop) * 0.5), 0);
+    z-index: 2;
+}
+.bg-8{
+    transform: translate3d(0, calc(var(--scrollTop) * .20), 0);
+    z-index: 2;
+}
+.bg-9{
+    transform: translate3d(0, calc(var(--scrollTop) / 9.7), 0);
+    z-index: 2;
+}
+
+.main-lesson-layer{
+    position: absolute;
+    width: 100%;
+}
+
+.main-shedow{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.main-lesson-shedow{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
 /* PHONE CHECKER */
 
 .phone_block {
-    background: black;
     padding: 100px 0;
 }
 
@@ -39,7 +95,6 @@
 /* TAB SLIDER */
 
 .tab_slider {
-    background: black;
     padding: 100px 0;
 }
 
@@ -98,7 +153,6 @@
 /*------CARD SWITCHER------*/
 
 .card_switcher {
-    background-color: black;
     padding: 100px 0;
 }
 
@@ -137,7 +191,6 @@
 
 .converter {
     padding: 100px 0;
-    background-color: black;
 }
 
 .inner_converter {
@@ -158,7 +211,6 @@
 
 .weather {
     padding: 100px 0;
-    background-color: black;
 }
 
 .inner_weather > div {
