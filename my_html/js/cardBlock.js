@@ -11,7 +11,7 @@ const fetchCard = async () => {
             const cardBlock = document.createElement('div')
             cardBlock.setAttribute('class','card')
             cardBlock.innerHTML = `
-                <h4 style="font-size: 14px;">${data.title}</h4>
+                <h4 style="font-size: 16px;">${data.title}</h4>
                 <img class="img-card-block" src="../img/dungeon.jpg" alt="aaa">
                 <span style="color: #f0f0f0">${data.body}</span>
         `

@@ -72,37 +72,39 @@ const usdInput = document.querySelector('#usd')
 const eurInput = document.querySelector('#eur')
 const rubInput = document.querySelector('#ruble')
 
-const convertorChanges = (elementValue,targetElementUsd, targetElementEur,targetElementRub,itsTrue) => {
-    elementValue.oninput = () => {
-        const request = new XMLHttpRequest()
-        request.open("GET", "../data/convertor.json")
-        request.setRequestHeader('Content-type', 'application/json')
-        request.send()
+const convertorChanges =  (elementValue,targetElementUsd, targetElementEur,targetElementRub,itsTrue) => {
+    elementValue.oninput = async () => {
+        try{
+            const response = await fetch('../data/convertor.json')
+            const data = await response.json()
 
-        request.onload = () => {
-            const response = JSON.parse(request.response)
-            if (itsTrue === "som"){
-                targetElementUsd.value = (elementValue.value / response.usd).toFixed(2)
-                targetElementEur.value = (elementValue.value / response.eur).toFixed(2)
-                targetElementRub.value = (elementValue.value / response.rub).toFixed(2)
-            }else if (itsTrue === 'usd'){
-                targetElementUsd.value = (elementValue.value * response.usd).toFixed(2)
-                targetElementEur.value = (elementValue.value * (response.usd / response.eur)).toFixed(2)
-                targetElementRub.value = (elementValue.value * (response.usd / response.rub)).toFixed(2)
-            }else if(itsTrue ==='eur'){
-                targetElementEur.value = (elementValue.value * response.eur).toFixed(2)
-                targetElementUsd.value = (elementValue.value * (response.eur / response.usd)).toFixed(2)
-                targetElementRub.value = (elementValue.value * (response.eur / response.rub)).toFixed(2)
-            }else{
-                targetElementRub.value = (elementValue.value * response.rub).toFixed(2)
-                targetElementUsd.value = (elementValue.value * (response.rub / response.usd)).toFixed(2)
-                targetElementEur.value = (elementValue.value * (response.rub / response.eur)).toFixed(2)
+            const convertFun  =  (data) => {
+                if (itsTrue === "som"){
+                    targetElementUsd.value = (elementValue.value / data.usd).toFixed(2)
+                    targetElementEur.value = (elementValue.value / data.eur).toFixed(2)
+                    targetElementRub.value = (elementValue.value / data.rub).toFixed(2)
+                }else if (itsTrue === 'usd'){
+                    targetElementUsd.value = (elementValue.value * data.usd).toFixed(2)
+                    targetElementEur.value = (elementValue.value * (data.usd / data.eur)).toFixed(2)
+                    targetElementRub.value = (elementValue.value * (data.usd / data.rub)).toFixed(2)
+                }else if(itsTrue ==='eur'){
+                    targetElementEur.value = (elementValue.value * data.eur).toFixed(2)
+                    targetElementUsd.value = (elementValue.value * (data.eur / data.usd)).toFixed(2)
+                    targetElementRub.value = (elementValue.value * (data.eur / data.rub)).toFixed(2)
+                }else{
+                    targetElementRub.value = (elementValue.value * data.rub).toFixed(2)
+                    targetElementUsd.value = (elementValue.value * (data.rub / data.usd)).toFixed(2)
+                    targetElementEur.value = (elementValue.value * (data.rub / data.eur)).toFixed(2)
+                }
+                if (elementValue.value === ''){
+                    targetElementRub.value = ''
+                    targetElementEur.value = ''
+                    targetElementUsd.value = ''
+                }
             }
-            if (elementValue.value === ''){
-                targetElementRub.value = ''
-                targetElementEur.value = ''
-                targetElementUsd.value = ''
-            }
+            convertFun(data)
+        }catch (e){
+            console.log(`error${e}`)
         }
     }
 }
@@ -182,6 +184,7 @@ const citySearch = () => {
         try{
             const response = await fetch(`${BASE_URL}?q=${event.target.value}&appid=${API_KEY}`)
             const data =await response.json()
+            console.log(data)
             city.innerHTML = data?.name ? data?.name : 'город не найден...'
             temp.innerHTML = data?.main?.temp ? Math.round(data?.main?.temp - 273) + "&deg;C" : '...'
         }catch (e){
