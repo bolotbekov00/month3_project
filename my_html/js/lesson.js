@@ -117,7 +117,7 @@ convertorChanges(rubInput,usdInput,eurInput,somInput, 'rub')
 const btnNext = document.querySelector('#btn-next')
 const btnPrev = document.querySelector('#btn-prev')
 const cardBlock = document.querySelector('.card')
-let id  = 198
+let id  = 1
 
 const elementCardSwitcher = () => {
     fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
@@ -134,7 +134,7 @@ elementCardSwitcher()
 
 btnNext.onclick = () => {
     id++
-    if (id === 200){
+    if (id >= 201){
         id = 1
     }
     elementCardSwitcher()
@@ -146,3 +146,48 @@ btnPrev.onclick = () => {
     }
     elementCardSwitcher()
 }
+
+//scroll
+
+window.addEventListener('scroll', e => {
+    document.body.style.cssText += `--scrollTop: ${this.scrollY}px`
+})
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+ScrollSmoother.create({
+    wrapper: '.wrapper',
+    content: '.content',
+})
+
+gsap.from('.header', 1.2, {opacity:1, y: -200, delay:0.7})
+gsap.from('.bg-2', 1.2, {opacity:0, y:150, delay:2})
+gsap.from('.bg-3', 1.2, {opacity:0, y:150, delay:1.5})
+gsap.from('.bg-4', 1.2, {opacity:0, x:300, delay:1.5})
+gsap.from('.bg-5', 1.2, {opacity:0, y:150, delay:.9})
+gsap.from('.bg-6', 1.2, {opacity:0, y:150, delay:.7})
+gsap.from('.bg-7', 1.2, {opacity:0, y:150, delay:.6})
+gsap.from('.bg-8', 1.2, {opacity:0, y:150, delay:.5})
+gsap.from('.bg-9', 1.2, {opacity:0, y:150, delay:.3})
+
+
+//weather
+
+const cityNameInput = document.querySelector('.cityName')
+const city = document.querySelector('.city')
+const temp = document.querySelector('.temp')
+const API_KEY = 'e417df62e04d3b1b111abeab19cea714'
+const BASE_URL = 'http://api.openweathermap.org/data/2.5/weather'
+
+const citySearch = () => {
+    cityNameInput.oninput = async (event) => {
+        try{
+            const response = await fetch(`${BASE_URL}?q=${event.target.value}&appid=${API_KEY}`)
+            const data =await response.json()
+            city.innerHTML = data?.name ? data?.name : 'город не найден...'
+            temp.innerHTML = data?.main?.temp ? Math.round(data?.main?.temp - 273) + "&deg;C" : '...'
+        }catch (e){
+            console.log(e.message, 'error')
+        }
+    }
+}
+
+citySearch()

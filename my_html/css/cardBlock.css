@@ -1,0 +1,18 @@
+
+.card-block{
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+.card{
+    width: 200px;
+    height: 250px;
+    border: #f0f0f0 solid 1px;
+    padding: 10px;
+    overflow: scroll;
+}
+.img-card-block{
+    height: 100px;
+    width: 150px;
+}

@@ -261,7 +261,7 @@ body{
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 200000000;
     background: rgba(0, 0, 0, 0.8);
     display: none;
 }

@@ -4,13 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ad855d-5f73-4b9d-ab89-f3de387a8771" name="Changes" comment="DZ-4" />
+    <list default="true" id="45ad855d-5f73-4b9d-ab89-f3de387a8771" name="Changes" comment="DZ-4">
+      <change afterPath="$PROJECT_DIR$/my_html/css/cardBlock.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_html/js/cardBlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_html/pages/cardBlock.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_html/css/lessons.css" beforeDir="false" afterPath="$PROJECT_DIR$/my_html/css/lessons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/my_html/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_html/js/lesson.js" beforeDir="false" afterPath="$PROJECT_DIR$/my_html/js/lesson.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_html/js/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/my_html/js/modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_html/pages/home_works.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_html/pages/home_works.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_html/pages/lessons.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_html/pages/lessons.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -26,11 +57,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "maste",
     "last_opened_file_path": "C:/MAMP/htdocs/project_program_for_students",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -41,6 +74,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\project_program_for_students\my_html\img" />
+      <recent name="C:\Users\user\Desktop\project_program_for_students\my_html\css" />
       <recent name="C:\Users\user\Desktop\project_program_for_students\my_html" />
     </key>
   </component>
@@ -59,6 +94,7 @@
       <workItem from="1697043421520" duration="10000000" />
       <workItem from="1697150510365" duration="29653000" />
       <workItem from="1697881222427" duration="12564000" />
+      <workItem from="1698318686590" duration="40328000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />

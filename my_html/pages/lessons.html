@@ -6,15 +6,16 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/core.css">
     <link rel="stylesheet" href="../css/lessons.css">
+    <link rel="stylesheet" href="../css/home_works.css">
 </head>
-<body>
+<body style="background: #181200">
 
-<div class="wrapper">
-    <div class="header">
+<div class="wrapper-ls">
+    <div class="header" style="z-index: 100000000;  background-color: transparent;">
         <div class="container">
             <div class="inner_header">
                 <a href="../index.html">
-                    <div class="logotype">
+                    <div class="logotype" style="background-color: transparent">
                         <h2>Java<span>Script</span></h2>
                     </div>
                 </a>
@@ -26,23 +27,38 @@
                         <a href="../pages/lessons.html">Lessons</a>
                     </li>
                     <li class="menu_link">
+                        <a href="../pages/cardBlock.html">Card block</a>
+                    </li>
+                    <li class="menu_link">
                         <a href="https://t.me/NurDinBuy16" target="_blank">Send hw</a>
                     </li>
                 </ul>
-                <button class="btn" id="btn-get">Click me!</button>
+                <button class="btn-ls" id="btn-get">Click me!</button>
             </div>
         </div>
     </div>
     <div class="main-block-ls">
-        <div class="container">
+        <div class="main_ls">
             <div class="main-fon">
-
+                <img src="../img/lesson_img/sky.png" class="main-lesson-layer bg-1">
+                <img src="../img/lesson_img/sun.png" class="main-lesson-layer bg-2" >
+                <img class="main-lesson-layer bg-3 " src="../img/lesson_img/mountain.png" >
+                <img src="../img/lesson_img/birds.png" class="main-lesson-layer bg-4" >
+                <img src="../img/lesson_img/valley1.png" class="main-lesson-layer bg-5" >
+                <img src="../img/lesson_img/valley2.png" class="main-lesson-layer bg-6" >
+                <img src="../img/lesson_img/valley3.png"  class="main-lesson-layer bg-7" >
+                <img src="../img/lesson_img/valley4.png"   class="main-lesson-layer bg-8">
+                <img class="main-lesson-layer bg-9" src="../img/lesson_img/valley5.png" >
             </div>
         </div>
     </div>
-
-
-
+    <div class="main-shedow">
+        <div class="main-filter">
+            <div class="main-filter-block">
+                <img src="../img/lesson_img/filler.png" class="main-lesson-shedow" >
+            </div>
+        </div>
+    </div>
     <div class="phone_block">
         <div class="container">
             <h3>Phone checker</h3>
@@ -93,7 +109,6 @@
                             element.classList.contains('highlight') вернет true, если у элемента есть класс
                             "highlight".</p>
                     </div>
-
 
 
                     <div class="tab_content_items">
@@ -157,11 +172,11 @@
         </div>
     </div>
 
-    <div class="footer">
+    <div class="footer" style="background-color: transparent">
         <div class="container">
             <a href="https://www.instagram.com/nurdinbuy/" target="_blank">
                 <div class="inner_footer">
-                    <h2>Made by NurDinBuy</h2>
+                    <h2 style="color: #f0f0f0">Made by NurDinBuy</h2>
                 </div>
             </a>
         </div>
@@ -183,6 +198,10 @@
 </div>
 
 </body>
+<script src="../libs/gsap/gsap.min.js"></script>
+<script src="../libs/gsap/ScrollTrigger.min.js"></script>
+<script src="../libs/gsap/ScrollSmoother.min.js"></script>
 <script src="../js/lesson.js"></script>
 <script src="../js/modal.js"></script>
+<script src="../js/main.js"></script>
 </html>
