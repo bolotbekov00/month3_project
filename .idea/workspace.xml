@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ad855d-5f73-4b9d-ab89-f3de387a8771" name="Changes" comment="DZ-4">
-      <change afterPath="$PROJECT_DIR$/my_html/css/cardBlock.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_html/js/cardBlock.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_html/pages/cardBlock.html" afterDir="false" />
+    <list default="true" id="45ad855d-5f73-4b9d-ab89-f3de387a8771" name="Changes" comment="DZ-7">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_html/css/lessons.css" beforeDir="false" afterPath="$PROJECT_DIR$/my_html/css/lessons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/my_html/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_html/js/home_works.js" beforeDir="false" afterPath="$PROJECT_DIR$/my_html/js/home_works.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_html/js/lesson.js" beforeDir="false" afterPath="$PROJECT_DIR$/my_html/js/lesson.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_html/js/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/my_html/js/modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_html/pages/home_works.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_html/pages/home_works.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_html/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/my_html/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_html/pages/lessons.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_html/pages/lessons.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +89,7 @@
       <workItem from="1697043421520" duration="10000000" />
       <workItem from="1697150510365" duration="29653000" />
       <workItem from="1697881222427" duration="12564000" />
-      <workItem from="1698318686590" duration="40328000" />
+      <workItem from="1698318686590" duration="47232000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -136,7 +131,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697750406923</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="DZ-7">
+      <option name="closed" value="true" />
+      <created>1698777422712</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1698777422712</updated>
+    </task>
+    <task id="LOCAL-00007" summary="DZ-7">
+      <option name="closed" value="true" />
+      <created>1698780504412</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698780504412</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +158,7 @@
     <MESSAGE value="DZ-2" />
     <MESSAGE value="DZ-3" />
     <MESSAGE value="DZ-4" />
-    <option name="LAST_COMMIT_MESSAGE" value="DZ-4" />
+    <MESSAGE value="DZ-7" />
+    <option name="LAST_COMMIT_MESSAGE" value="DZ-7" />
   </component>
 </project>

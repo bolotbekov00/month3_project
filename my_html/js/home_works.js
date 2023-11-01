@@ -116,7 +116,7 @@ gsap.from('.title-hw',1.2,{opacity:0,x:100, delay:0.8})
 gsap.from('#leftCloud',1.2,{opacity:0,x:-200, delay:0.8})
 gsap.from('#rightCloud',1.2,{opacity:0,x:200, delay:0.8})
 gsap.from('#mainCloud',1.2,{opacity:0,y:-200, delay:0.8})
-
+gsap.from('.header', 1.2,{opacity:0, y:-100, delay: 0.9})
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 ScrollSmoother.create({

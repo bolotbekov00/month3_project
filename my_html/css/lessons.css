@@ -59,6 +59,7 @@
     position: relative;
     width: 100%;
     height: 100vh;
+    margin-bottom: 980px;
 }
 .main-lesson-shedow{
     position: absolute;

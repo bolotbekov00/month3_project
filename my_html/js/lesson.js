@@ -170,6 +170,137 @@ gsap.from('.bg-7', 1.2, {opacity:0, y:150, delay:.6})
 gsap.from('.bg-8', 1.2, {opacity:0, y:150, delay:.5})
 gsap.from('.bg-9', 1.2, {opacity:0, y:150, delay:.3})
 
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+ScrollSmoother.create({
+    wrapper: '.wrapper',
+    content: '.content',
+})
+
+let titleLessonGsap  = gsap.utils.toArray('h3')
+titleLessonGsap.forEach(item => {
+    gsap.fromTo(item, {y: -100, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '-100',
+            scrub:true,
+        }
+    })
+})
+let gsapPhoneBlock  = gsap.utils.toArray('.inner_phone_block')
+gsapPhoneBlock.forEach(item => {
+    gsap.fromTo(item, {x: -80, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '-100',
+            scrub:true,
+        }
+    })
+})
+let gsapTabBlock  = gsap.utils.toArray('.tab_content_block')
+gsapTabBlock.forEach(item => {
+    gsap.fromTo(item, {x: -80, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '-100',
+            scrub:true,
+        }
+    })
+})
+let gsapTabBtnBlock  = gsap.utils.toArray('.tab_content_items')
+gsapTabBtnBlock.forEach(item => {
+    gsap.fromTo(item, {x: 80, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '-100',
+            scrub:true,
+        }
+    })
+})
+let somGsap  = gsap.utils.toArray('#som')
+somGsap.forEach(item => {
+    gsap.fromTo(item, {x: 80, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '-100',
+            scrub:true,
+        }
+    })
+})
+let eurGsap  = gsap.utils.toArray('#eur')
+eurGsap.forEach(item => {
+    gsap.fromTo(item, {x: 80, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '-100',
+            scrub:true,
+        }
+    })
+})
+let RubGsap  = gsap.utils.toArray('#ruble')
+RubGsap.forEach(item => {
+    gsap.fromTo(item, {x: -100, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '-100',
+            scrub:true,
+        }
+    })
+})
+let UsdGsap  = gsap.utils.toArray('#usd')
+UsdGsap.forEach(item => {
+    gsap.fromTo(item, {x: -100, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '-100',
+            scrub:true,
+        }
+    })
+})
+
+let labelGsap  = gsap.utils.toArray('label')
+labelGsap.forEach(item => {
+    gsap.fromTo(item, {y: -100, opacity: 0}, {
+        opacity:1,y:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '0',
+            scrub:true,
+        }
+    })
+})
+
+let weatherGsap  = gsap.utils.toArray('.inner_weather')
+weatherGsap.forEach(item => {
+    gsap.fromTo(item, {y: -100, opacity: 0}, {
+        opacity:1,y:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '0',
+            scrub:true,
+        }
+    })
+})
+
+
+
 
 //weather
 
@@ -194,3 +325,5 @@ const citySearch = () => {
 }
 
 citySearch()
+
+
