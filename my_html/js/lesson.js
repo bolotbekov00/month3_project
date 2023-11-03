@@ -299,6 +299,79 @@ weatherGsap.forEach(item => {
     })
 })
 
+let titleLGsap  = gsap.utils.toArray('#l')
+titleLGsap.forEach(item => {
+    gsap.fromTo(item, {y: 100, opacity: 0}, {
+        opacity:1,y:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '0',
+            scrub:true,
+        }
+    })
+})
+let titleEGsap  = gsap.utils.toArray('#e')
+titleEGsap.forEach(item => {
+    gsap.fromTo(item, {x: 300, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '0',
+            scrub:true,
+        }
+    })
+})
+let titleSGsap  = gsap.utils.toArray('#s')
+titleSGsap.forEach(item => {
+    gsap.fromTo(item, {y: -150, opacity: 0}, {
+        opacity:1,y:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '0',
+            scrub:true,
+        }
+    })
+})
+let titleS2Gsap  = gsap.utils.toArray('#s2')
+titleS2Gsap.forEach(item => {
+    gsap.fromTo(item, {x: -150, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '0',
+            scrub:true,
+        }
+    })
+})
+let titleOGsap  = gsap.utils.toArray('#o')
+titleOGsap.forEach(item => {
+    gsap.fromTo(item, {x: 450, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '0',
+            scrub:true,
+        }
+    })
+})
+let titleNGsap  = gsap.utils.toArray('#n')
+titleNGsap.forEach(item => {
+    gsap.fromTo(item, {x: -450, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '0',
+            scrub:true,
+        }
+    })
+})
+
 
 
 

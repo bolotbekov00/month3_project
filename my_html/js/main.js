@@ -75,33 +75,6 @@ prev.onclick = () => {
 
 autoSlider(index)
 
-
-//Scroll Parallax
-//
-// document.addEventListener("scroll", () => {
-//     window.addEventListener('scroll', ev => {
-//         document.body.cssText += `--scrollTop: ${this.scrollY}px`
-//     })
-//     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-//     ScrollSmoother.create({
-//         wrapper: '.wrapper',
-//         content: '.content',
-//     });
-// // });
-// let listBg = Array.from(document.querySelectorAll('.bg .bg-block'));
-// let listTitle = Array.from(document.querySelectorAll('.main_block'));
-//
-// window.addEventListener('scroll', (e) =>{
-//     listBg.forEach((bg, index) => {
-//         if (index !== 0 && index !== 8) {
-//             bg.style.transform = `translateY(${(top * index / 2)}px)`;
-//         } else if (index === 0) {
-//             bg.style.transform = `translateY(${(top / 3)}px)`;
-//         }
-//     });
-//
-// })
-
 window.addEventListener('scroll', e => {
     document.body.style.cssText += `--scrollTop: ${this.scrollY}px`
 })

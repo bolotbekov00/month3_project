@@ -43,55 +43,56 @@ moveChildBlock()
 
 //HW-2
 
-const minutesBlock = document.querySelector('#minutesS')
-const secondsBlock = document.querySelector('#secondsS')
-const mlSecondsBlock = document.querySelector('#ml-secondsS')
-const btnStart = document.querySelector('#start')
-const btnStop = document.querySelector('#stop')
-const btnReset = document.querySelector('#reset')
+const minutesBlock = document.querySelector('#minutesS');
+const secondsBlock = document.querySelector('#secondsS');
+const mlSecondsBlock = document.querySelector('#ml-secondsS');
+const btnStart = document.querySelector('#start');
+const btnStop = document.querySelector('#stop');
+const btnReset = document.querySelector('#reset');
 
 let interval;
-let seconds = 0
-let minutes = 0
-let mlSeconds = 0
+let seconds = 0;
+let minutes = 0;
+let mlSeconds = 0;
+let timerRunning = false;
 
 const startTimer = () => {
-    mlSeconds++
-    mlSecondsBlock.innerHTML = mlSeconds
-    if (mlSeconds > 99){
-        seconds++
-        secondsBlock.innerHTML = '0' + seconds
-        mlSeconds = 0
+    mlSeconds++;
+    mlSecondsBlock.innerHTML = mlSeconds;
+    if (mlSeconds > 99) {
+        seconds++;
+        secondsBlock.innerHTML = seconds < 10 ? '0' + seconds : seconds;
+        mlSeconds = 0;
     }
-    if (seconds > 9){
-        secondsBlock.innerHTML = seconds
+    if (seconds > 59) {
+        minutes++;
+        minutesBlock.innerHTML = minutes < 10 ? '0' + minutes : minutes;
+        seconds = 0;
+        secondsBlock.innerHTML = '0' + seconds;
     }
-    if(seconds > 59){
-        minutes++
-        minutesBlock.innerHTML = '0' + minutes
-        seconds = 0
-        secondsBlock.innerHTML = '0' + seconds
-    }
-    if (minutes > 9){
-        minutesBlock.innerHTML = minutes
-    }
+};
 
-}
 btnStart.addEventListener('click', () => {
-    interval = setInterval(startTimer,10)
+    if (!timerRunning) {
+        interval = setInterval(startTimer, 10);
+        timerRunning = true;
+    }
 })
-btnStop.addEventListener('click', () => {
-    clearInterval(interval)
-})
-btnReset.addEventListener('click', () => {
-    clearInterval(interval)
-    minutes = 0
-    seconds = 0
-    mlSeconds = 0
-    minutesBlock.innerHTML = '00'
-    secondsBlock.innerHTML = '00'
-    mlSecondsBlock.innerHTML = '00'
 
+btnStop.addEventListener('click', () => {
+    clearInterval(interval);
+    timerRunning = false;
+})
+
+btnReset.addEventListener('click', () => {
+    clearInterval(interval);
+    minutes = 0;
+    seconds = 0;
+    mlSeconds = 0;
+    minutesBlock.innerHTML = '00';
+    secondsBlock.innerHTML = '00';
+    mlSecondsBlock.innerHTML = '00';
+    timerRunning = false
 })
 window.addEventListener('scroll', e => {
     document.body.style.cssText += `--scrollTop: ${this.scrollY}px`
