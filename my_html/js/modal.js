@@ -44,27 +44,35 @@ checkScroll()
 const formElement = document.querySelector('form')
 
 const postData = (url, data) => {
-    const response = fetch(url, {
-        method:"POST",
-        headers: {'Content-type' : 'application/json'},
-        body:data
-    })
+    try{
+        const response = fetch(url, {
+            method:"POST",
+            headers: {'Content-type' : 'application/json'},
+            body:data
+        })
+    }catch (e){
+        console.log(`error${e}`)
+    }
 }
 
 const bindPostData = (from) => {
-    from.onsubmit = (event) => {
-       event.preventDefault()
-        const fromData = new FormData()
-        const usersObj = {}
-        fromData.forEach((item, index,) => {
-            usersObj[index] = item
-        })
-        const userJson = JSON.stringify(usersObj)
-        if (window.location.pathname === '/project_program_for_students/index.html'){
-            postData('server.php',userJson)
-        }else{
-            postData('../server.php', userJson)
+    try{
+        from.onsubmit = (event) => {
+            event.preventDefault()
+            const fromData = new FormData()
+            const usersObj = {}
+            fromData.forEach((item, index,) => {
+                usersObj[index] = item
+            })
+            const userJson = JSON.stringify(usersObj)
+            if (window.location.pathname === '/project_program_for_students/index.html'){
+                postData('server.php',userJson)
+            }else{
+                postData('../server.php', userJson)
+            }
         }
+    }catch (e){
+        console.log(`error${e}`)
     }
 }
 bindPostData(formElement)

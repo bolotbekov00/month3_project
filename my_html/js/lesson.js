@@ -72,37 +72,39 @@ const usdInput = document.querySelector('#usd')
 const eurInput = document.querySelector('#eur')
 const rubInput = document.querySelector('#ruble')
 
-const convertorChanges = (elementValue,targetElementUsd, targetElementEur,targetElementRub,itsTrue) => {
-    elementValue.oninput = () => {
-        const request = new XMLHttpRequest()
-        request.open("GET", "../data/convertor.json")
-        request.setRequestHeader('Content-type', 'application/json')
-        request.send()
+const convertorChanges =  (elementValue,targetElementUsd, targetElementEur,targetElementRub,itsTrue) => {
+    elementValue.oninput = async () => {
+        try{
+            const response = await fetch('../data/convertor.json')
+            const data = await response.json()
 
-        request.onload = () => {
-            const response = JSON.parse(request.response)
-            if (itsTrue === "som"){
-                targetElementUsd.value = (elementValue.value / response.usd).toFixed(2)
-                targetElementEur.value = (elementValue.value / response.eur).toFixed(2)
-                targetElementRub.value = (elementValue.value / response.rub).toFixed(2)
-            }else if (itsTrue === 'usd'){
-                targetElementUsd.value = (elementValue.value * response.usd).toFixed(2)
-                targetElementEur.value = (elementValue.value * (response.usd / response.eur)).toFixed(2)
-                targetElementRub.value = (elementValue.value * (response.usd / response.rub)).toFixed(2)
-            }else if(itsTrue ==='eur'){
-                targetElementEur.value = (elementValue.value * response.eur).toFixed(2)
-                targetElementUsd.value = (elementValue.value * (response.eur / response.usd)).toFixed(2)
-                targetElementRub.value = (elementValue.value * (response.eur / response.rub)).toFixed(2)
-            }else{
-                targetElementRub.value = (elementValue.value * response.rub).toFixed(2)
-                targetElementUsd.value = (elementValue.value * (response.rub / response.usd)).toFixed(2)
-                targetElementEur.value = (elementValue.value * (response.rub / response.eur)).toFixed(2)
+            const convertFun  =  (data) => {
+                if (itsTrue === "som"){
+                    targetElementUsd.value = (elementValue.value / data.usd).toFixed(2)
+                    targetElementEur.value = (elementValue.value / data.eur).toFixed(2)
+                    targetElementRub.value = (elementValue.value / data.rub).toFixed(2)
+                }else if (itsTrue === 'usd'){
+                    targetElementUsd.value = (elementValue.value * data.usd).toFixed(2)
+                    targetElementEur.value = (elementValue.value * (data.usd / data.eur)).toFixed(2)
+                    targetElementRub.value = (elementValue.value * (data.usd / data.rub)).toFixed(2)
+                }else if(itsTrue ==='eur'){
+                    targetElementEur.value = (elementValue.value * data.eur).toFixed(2)
+                    targetElementUsd.value = (elementValue.value * (data.eur / data.usd)).toFixed(2)
+                    targetElementRub.value = (elementValue.value * (data.eur / data.rub)).toFixed(2)
+                }else{
+                    targetElementRub.value = (elementValue.value * data.rub).toFixed(2)
+                    targetElementUsd.value = (elementValue.value * (data.rub / data.usd)).toFixed(2)
+                    targetElementEur.value = (elementValue.value * (data.rub / data.eur)).toFixed(2)
+                }
+                if (elementValue.value === ''){
+                    targetElementRub.value = ''
+                    targetElementEur.value = ''
+                    targetElementUsd.value = ''
+                }
             }
-            if (elementValue.value === ''){
-                targetElementRub.value = ''
-                targetElementEur.value = ''
-                targetElementUsd.value = ''
-            }
+            convertFun(data)
+        }catch (e){
+            console.log(`error${e}`)
         }
     }
 }
@@ -168,6 +170,210 @@ gsap.from('.bg-7', 1.2, {opacity:0, y:150, delay:.6})
 gsap.from('.bg-8', 1.2, {opacity:0, y:150, delay:.5})
 gsap.from('.bg-9', 1.2, {opacity:0, y:150, delay:.3})
 
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+ScrollSmoother.create({
+    wrapper: '.wrapper',
+    content: '.content',
+})
+
+let titleLessonGsap  = gsap.utils.toArray('h3')
+titleLessonGsap.forEach(item => {
+    gsap.fromTo(item, {y: -100, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '-100',
+            scrub:true,
+        }
+    })
+})
+let gsapPhoneBlock  = gsap.utils.toArray('.inner_phone_block')
+gsapPhoneBlock.forEach(item => {
+    gsap.fromTo(item, {x: -80, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '-100',
+            scrub:true,
+        }
+    })
+})
+let gsapTabBlock  = gsap.utils.toArray('.tab_content_block')
+gsapTabBlock.forEach(item => {
+    gsap.fromTo(item, {x: -80, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '-100',
+            scrub:true,
+        }
+    })
+})
+let gsapTabBtnBlock  = gsap.utils.toArray('.tab_content_items')
+gsapTabBtnBlock.forEach(item => {
+    gsap.fromTo(item, {x: 80, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '-100',
+            scrub:true,
+        }
+    })
+})
+let somGsap  = gsap.utils.toArray('#som')
+somGsap.forEach(item => {
+    gsap.fromTo(item, {x: 80, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '-100',
+            scrub:true,
+        }
+    })
+})
+let eurGsap  = gsap.utils.toArray('#eur')
+eurGsap.forEach(item => {
+    gsap.fromTo(item, {x: 80, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '-100',
+            scrub:true,
+        }
+    })
+})
+let RubGsap  = gsap.utils.toArray('#ruble')
+RubGsap.forEach(item => {
+    gsap.fromTo(item, {x: -100, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '-100',
+            scrub:true,
+        }
+    })
+})
+let UsdGsap  = gsap.utils.toArray('#usd')
+UsdGsap.forEach(item => {
+    gsap.fromTo(item, {x: -100, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '-100',
+            scrub:true,
+        }
+    })
+})
+
+let labelGsap  = gsap.utils.toArray('label')
+labelGsap.forEach(item => {
+    gsap.fromTo(item, {y: -100, opacity: 0}, {
+        opacity:1,y:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '0',
+            scrub:true,
+        }
+    })
+})
+
+let weatherGsap  = gsap.utils.toArray('.inner_weather')
+weatherGsap.forEach(item => {
+    gsap.fromTo(item, {y: -100, opacity: 0}, {
+        opacity:1,y:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '0',
+            scrub:true,
+        }
+    })
+})
+
+let titleLGsap  = gsap.utils.toArray('#l')
+titleLGsap.forEach(item => {
+    gsap.fromTo(item, {y: 100, opacity: 0}, {
+        opacity:1,y:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '0',
+            scrub:true,
+        }
+    })
+})
+let titleEGsap  = gsap.utils.toArray('#e')
+titleEGsap.forEach(item => {
+    gsap.fromTo(item, {x: 300, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '0',
+            scrub:true,
+        }
+    })
+})
+let titleSGsap  = gsap.utils.toArray('#s')
+titleSGsap.forEach(item => {
+    gsap.fromTo(item, {y: -150, opacity: 0}, {
+        opacity:1,y:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '0',
+            scrub:true,
+        }
+    })
+})
+let titleS2Gsap  = gsap.utils.toArray('#s2')
+titleS2Gsap.forEach(item => {
+    gsap.fromTo(item, {x: -150, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '0',
+            scrub:true,
+        }
+    })
+})
+let titleOGsap  = gsap.utils.toArray('#o')
+titleOGsap.forEach(item => {
+    gsap.fromTo(item, {x: 450, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '0',
+            scrub:true,
+        }
+    })
+})
+let titleNGsap  = gsap.utils.toArray('#n')
+titleNGsap.forEach(item => {
+    gsap.fromTo(item, {x: -450, opacity: 0}, {
+        opacity:1,x:0,
+        scrollTrigger:{
+            trigger:item,
+            start: '-800',
+            end: '0',
+            scrub:true,
+        }
+    })
+})
+
+
+
 
 //weather
 
@@ -182,6 +388,7 @@ const citySearch = () => {
         try{
             const response = await fetch(`${BASE_URL}?q=${event.target.value}&appid=${API_KEY}`)
             const data =await response.json()
+            console.log(data)
             city.innerHTML = data?.name ? data?.name : 'город не найден...'
             temp.innerHTML = data?.main?.temp ? Math.round(data?.main?.temp - 273) + "&deg;C" : '...'
         }catch (e){
@@ -191,3 +398,5 @@ const citySearch = () => {
 }
 
 citySearch()
+
+
